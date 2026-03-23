@@ -5,6 +5,10 @@
 </template>
 
 <script setup lang="ts">
+definePageMeta({
+  layout: "users-layout",
+})
+
   const {user_id} = useRoute().params;
 </script>
 
