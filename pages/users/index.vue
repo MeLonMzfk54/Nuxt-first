@@ -1,7 +1,9 @@
 <template>
   <div>
     <h1>Users</h1>
-    <ul class="d-flex flex-wrap list-unstyled gap-3">
+    <div v-if="pending">Загрузка...</div>
+    <div v-else-if="error">Ошибка: {{ error.message }}</div>
+    <ul v-else class="d-flex flex-wrap list-unstyled gap-3">
       <li v-for="user in users" :key="user.id">
         <NuxtLink
             class="list-group-item"
@@ -27,7 +29,7 @@ definePageMeta({
   //   {id: 3, name: "Anton"},
   // ])
 
-  const { data } = useAsyncData('users', userService.getAll);
+  const { data, pending, error } = useAsyncData('users', userService.getAll);
   const users = computed(() => data.value?.users ?? [])
 </script>
 
