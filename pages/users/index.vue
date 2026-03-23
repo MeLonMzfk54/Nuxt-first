@@ -3,14 +3,15 @@
     <h1>Users</h1>
     <div v-if="pending">Загрузка...</div>
     <div v-else-if="error">Ошибка: {{ error.message }}</div>
-    <ul v-else class="d-flex flex-wrap list-unstyled gap-3">
+    <ul v-else class="d-flex flex-wrap justify-content-between list-unstyled gap-3">
       <li v-for="user in users" :key="user.id">
-        <NuxtLink
-            class="list-group-item"
-            :to="`/users/${user.id}`"
-        >
-          {{ user.firstName }} {{ user.lastName }}
-        </NuxtLink>
+<!--        <NuxtLink-->
+<!--            class="list-group-item"-->
+<!--            :to="`/users/${user.id}`"-->
+<!--        >-->
+<!--          {{ user.firstName }} {{ user.lastName }}-->
+<!--        </NuxtLink>-->
+        <UserLink :user="user"/>
       </li>
     </ul>
   </div>
