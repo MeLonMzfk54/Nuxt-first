@@ -2,20 +2,20 @@
   <div>
     <h1>Home page</h1>
     <Alert>
-      Example - {{ data.msg }}
+      Example
     </Alert>
   </div>
 </template>
 
 <script setup lang="ts">
-import type {exampleReturn} from "@/models/examples";
-  const {data} = await useFetch<exampleReturn>('/api/example', {
-    method: "post",
-    body: {
-      name: 'Anton',
-      id: 1,
-    }
-  });
+// import type {exampleReturn} from "@/models/examples";
+//   const {data} = await useFetch<exampleReturn>('/api/example', {
+//     method: "post",
+//     body: {
+//       name: 'Anton',
+//       id: 1,
+//     }
+//   });
 </script>
 
 <style scoped>
